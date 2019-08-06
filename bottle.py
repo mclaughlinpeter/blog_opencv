@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import imutils
 
 # read image and take first channel only
-bottle_3_channel = cv2.imread("./images/bottle_1.png")
+bottle_3_channel = cv2.imread("./images/bottle_4.png")
 bottle_gray = cv2.split(bottle_3_channel)[0]
 cv2.imshow("Bottle Gray", bottle_gray)
 cv2.waitKey(0)
@@ -42,7 +42,7 @@ areas = [cv2.contourArea(contour) for contour in contours]
 # print contour with largest area
 bottle_clone = bottle_3_channel.copy()
 cv2.drawContours(bottle_clone, [contours[-1]], -1, (255, 0, 0), 2)
-cv2.imshow("Largest contour", bottle_clone)
+cv2.imshow("Largest Contour", bottle_clone)
 cv2.waitKey(0)
 
 # draw bounding box, calculate aspect and display decision
