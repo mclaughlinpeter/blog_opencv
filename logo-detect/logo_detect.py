@@ -19,10 +19,10 @@ kpsScene = detector.detect(grayScene)
 
 # extract features
 (kpsLogo, featuresLogo) = extractor.compute(grayLogo, kpsLogo)
-(kpsScene, featureScene) = extractor.compute(grayScene, kpsScene)
+(kpsScene, featuresScene) = extractor.compute(grayScene, kpsScene)
 
 # match the keypoints
-rawMatches = matcher.knnMatch(featuresLogo, featureScene, 2)
+rawMatches = matcher.knnMatch(featuresLogo, featuresScene, 2)
 matches = []
 
 if rawMatches is not None:
