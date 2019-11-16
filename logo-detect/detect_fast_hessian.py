@@ -1,8 +1,14 @@
 import numpy as np
 import cv2
+import argparse
+
+# construct argument parser and perform parse
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to image")
+args = vars(ap.parse_args())
 
 # load the image and convert it to grayscale
-image = cv2.imread("./logo-cropped.png")
+image = cv2.imread(args["image"])
 orig = image.copy()
 gray = cv2.split(image)[0]
 
